@@ -56,21 +56,20 @@ public class FirstNametest
 
      }
 
-      ////////////////////////////////////////////////////////////////////////////////
+  /*LastName usecase*/
+  @Test
+  public void givenMessage_whenLastNameIsCorrectformat_shouldReturnTrue()
+  {
+       FirstName firstname = new FirstName();
+       boolean fname = firstname.isValidLastName("Swapna");
+       Assert.assertTrue(fname);
 
-     @Test
-     public void givenMessage_whenLastNameIsCorrectformat_shouldReturnTrue()
-     {
-          FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("Khairnar");
-          Assert.assertTrue(fname);
-
-     }
+  }
      @Test
      public void givenMessage_whenLastNameContainStartwithSmallcharacter_shouldReturnFalse()
      {
           FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("khairnar");
+          boolean fname = firstname.isValidLastName("swapna");
           Assert.assertFalse(fname);
 
      }
@@ -79,7 +78,7 @@ public class FirstNametest
      public void givenMessage_whenLastNameContainsDigits_shouldReturnFalse()
      {
           FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("Khairnar123");
+          boolean fname = firstname.isValidLastName("Swapna123");
           Assert.assertFalse(fname);
 
      }
@@ -87,7 +86,7 @@ public class FirstNametest
      public void givenMessage_whenLastNameContainsSpecialCharacter_shouldReturnFalse()
      {
           FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("Khairnar@#%$");
+          boolean fname = firstname.isValidLastName("Swapna@#%$");
           Assert.assertFalse(fname);
 
      }
@@ -95,16 +94,19 @@ public class FirstNametest
      public void givenMessage_whenLastNameLengthTwo_shouldReturnFalse()
      {
           FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("k");
+          boolean fname = firstname.isValidLastName("s");
           Assert.assertFalse(fname);
+
      }
      @Test
      public void givenMessage_whenLastNameContainOnlyDigit_shouldReturnFalse()
      {
           FirstName firstname = new FirstName();
-          boolean fname = firstname.isValidFirstName("123459");
+          boolean fname = firstname.isValidLastName("12345");
           Assert.assertFalse(fname);
+
      }
+
 
 
 
