@@ -106,7 +106,53 @@ public class FirstNametest
           Assert.assertFalse(fname);
 
      }
+     //validation of MobileNumber
+    @Test
+    public void givenMobileNumber_WhenPassedValid_ReturnTrue()
+    {
+        FirstName firstname = new FirstName();
+        boolean number =firstname.isValidMobileNumber("91 9876543210");
+        Assert.assertTrue(number);
+    }
 
+    @Test
+    public void givenMobileNumber_WhenNotPassedCountryCode_ReturnFalse()
+    {
+        FirstName firstname = new FirstName();
+        boolean number = firstname.isValidMobileNumber("9876543210");
+        Assert.assertFalse(number);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenNotSeperatedCountryCode_ReturnFalse()
+    {
+        FirstName firstname = new FirstName();
+        boolean number = firstname.isValidMobileNumber("919876543210");
+        Assert.assertFalse(number);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenPassedWithMultipleSpace_ReturnFalse()
+    {
+        FirstName firstname = new FirstName();
+        boolean number = firstname.isValidMobileNumber("91   9876543210");
+        Assert.assertFalse(number);
+    }
+    @Test
+    public void givenMobileNumber_WhenPassedLessThanTenNumbers_ReturnFalse()
+    {
+        FirstName firstname = new FirstName();
+        boolean number = firstname.isValidMobileNumber("91 3210");
+        Assert.assertFalse(number);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenPassedOtherThanNumeric_ReturnFalse()
+    {
+        FirstName firstname = new FirstName();
+        boolean number =firstname.isValidMobileNumber("987ASD54@210");
+        Assert.assertFalse(number);
+    }
 
 
 

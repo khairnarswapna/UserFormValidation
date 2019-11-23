@@ -7,7 +7,6 @@ public class FirstName
 {
     Pattern pattern;
     Matcher matcher;
-
     public boolean isValidFirstName(String name)
     {
 
@@ -38,4 +37,16 @@ public class FirstName
         }
 
     }
+    public boolean isValidMobileNumber(String number)
+    {
+        Pattern NUMBER_PATTERN = Pattern.compile("^[0-9]{2}[: :]{1}[0-9]{10}$");
+        Matcher match = NUMBER_PATTERN.matcher(number);
+        if (match.matches())
+            return true;
+        else
+            return false;
+    }
+
+
+
 }
